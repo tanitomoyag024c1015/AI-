@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI登山支援アプリ</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet CSS -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🏔 AI登山支援アプリ</h1>
+
+        <p class="subtitle">
+            登山中に見つけた動植物をAIが判定します
+        </p>
+
+        <hr>
+
+        <h2>画像を選択</h2>
+
+        <input type="file" id="imageInput" accept="image/*">
+
+        <div class="preview">
+
+            <h2>選択した画像</h2>
+
+            <img id="previewImage" style="display: none; max-width: 300px;">
+
+            <br><br>
+
+            <button id="analyzeBtn">
+                AIで認識
+            </button>
+
+        </div>
+
+        <hr>
+
+        <h2>AI認識結果</h2>
+
+        <div id="result">
+            ここに結果が表示されます。
+        </div>
+
+        <hr>
+
+<h2>現在地</h2>
+
+<button id="locationBtn">
+    現在地を取得
+</button>
+
+<p>
+    <strong>緯度：</strong>
+    <span id="latitude">---</span>
+</p>
+
+<p>
+    <strong>経度：</strong>
+    <span id="longitude">---</span>
+</p>
+
+<p id="locationStatus"></p>
+
+        <hr>
+
+<h2>メッセージ共有</h2>
+
+<textarea
+    id="messageInput"
+    placeholder="メッセージを入力してください"
+    rows="4"
+    cols="50"></textarea>
+
+<br><br>
+
+<button id="sendMessageBtn">
+    投稿
+</button>
+
+<p id="messageStatus"></p>
+
+<hr>
+
+<h3>投稿一覧</h3>
+
+<div id="messageList">
+    まだ投稿はありません。
+</div>
+
+<hr>
+
+<h2>現在地付近の投稿</h2>
+
+<p id="nearbyStatus">
+    現在地を取得すると、近くの投稿が表示されます。
+</p>
+
+<!-- 地図 -->
+<div id="map"></div>
+<!-- 近くの投稿 -->
+<div id="nearbyMessages"></div>
+
+    </div>
+
+    <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+   <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
